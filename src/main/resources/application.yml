@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  # 데이터베이스 커넥션 설정
+  # hikariCP를 써서 알아서 커넥션 다 해 줌
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        # show_sql: true # system.out으로 보여줌, 로거를 통해서 찍어야 하기 때문에 안 쓴다
+        format_sql: true
+
+logging.level:
+    org.hibernate.SQL: debug # 로거를 통해 보여줌
+    org.hibernate.type: trace #스프링 부트 2.x, hibernate5
+# org.hibernate.orm.jdbc.bind: trace #스프링 부트 3.x, hibernate6
